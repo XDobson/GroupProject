@@ -1,0 +1,88 @@
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* All items directly under the body will be centered on the webpage */
+}
+h1, h2{
+    text-align: center;
+}
+/* this is a div with the ID "header" */
+#header {
+    /* This div is 30% of the height of the screen it is viewed on. */
+    height: 30vh;
+    width: 100%;
+
+    /* This div uses flex-style formatting to center the img inside of it. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+/* Header is 30vh tall, and the img inside of it is 20vh tall. That leaves 10vh for the nav bar */
+#header img {
+    height: 20vh
+}
+#header #nav {
+    
+}
+
+/* Applies to all sections. Sections is the tag we will be using for each thing we put in the body, like "about section" "news section" etc. */
+section{
+    /* Flex direction type makes the elements easier to control. */
+    display:flex;
+
+    /* By default, flexed-elements are horizontal. "flex-direction column" makes them vertical*/
+    flex-direction: column;
+
+    /* makes sections as wide as 90% of the "view width" */
+    width: 90vw;
+
+    margin-bottom: 20vh;
+}
+
+#allNewsItems{
+    display: flex;
+    /* Spaces the img and headline evenly from each other and the sides of the div */
+    justify-content: space-around;
+}
+.newsItem{
+    display: flex;
+    justify-content: space-around;
+
+    /* black border, 1px wide, 10px curved corners */
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    padding: 1vw;
+    text-align: center;
+
+    width: 25vw;
+}
+.newsItem img{
+    width: 12vw;
+}
+
+footer{
+    /* items are centered completely using flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Footer section is 20% of the height of the view window */
+    height: 20vh;
+    width: 100%;
+}
+footer p, footer h6{
+    margin: 0;
+    padding: 0;
+    
+}
