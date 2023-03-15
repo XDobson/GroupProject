@@ -1,76 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Righteous&family=Sofia+Sans+Condensed&display=swap');
 
-html{
+/* 
+This one is hand written, thin
+font-family: 'Edu NSW ACT Foundation', cursive;
+
+this one is bold
+font-family: 'Righteous', cursive;
+
+thin, condensed, not handwritten 
+font-family: 'Sofia Sans Condensed', sans-serif; 
+*/
+
+
+html {
     margin: 0;
     padding: 0;
+
+    /* Light tan color */
+    background-color: #fdfbe0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* All items directly under the body will be centered on the webpage */
 }
-h1, h2{
+
+h1, h2 {
+    font-size: 4vw;
     text-align: center;
+    font-family: 'Righteous', cursive;
 }
+
+p {
+    text-align: center;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    font-size: 2.5vw;
+}
+
 /* this is a div with the ID "header" */
 #header {
     /* This div is 30% of the height of the screen it is viewed on. */
-    height: 30vh;
-    width: 100%;
+    
+    height: 20vh;
+    width: 100vw;
 
     /* This div uses flex-style formatting to center the img inside of it. */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
+
+    background-color: white;
+    border-bottom: black solid 2px;
 }
+
 /* Header is 30vh tall, and the img inside of it is 20vh tall. That leaves 10vh for the nav bar */
-#header img {
-    height: 20vh
+#header div {
+    display: flex;
+    justify-content: center;
+    justify-content: align-items;
+    height: 100%;
 }
-#header #nav {
+#header img {
+    height: 100%
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+
+    position:sticky;
+    top:0;
+
+    width: 100vw;
+    height: 3vw;
+
+    margin: 0 0 1vh 0;
+    padding: 2vh;
+
+    border: black solid 2px;
+    border-top: 0px;
+    background-color: whitesmoke;
+}
+#nav a {
+    margin: 0 2vw 0 2vw;
     
+    width: 8vw;
+    height: 3vw;
+
+    justify-content: center;
+}
+#nav button{
+    height: 100%;
+    width: 100%;
+
+    font-size: 1.5vw;
+    font-family: 'Righteous', cursive;
+
+    background-color: #DC7190;
+    border: 4px solid #b8406b;
+    border-radius: 5px;
+}
+#nav button:active{
+    background-color: #b8406b;
+    border-right: #DC7190 4px solid;
+    border-bottom: #DC7190 4px solid;
 }
 
 /* Applies to all sections. Sections is the tag we will be using for each thing we put in the body, like "about section" "news section" etc. */
-section{
+section {
     /* Flex direction type makes the elements easier to control. */
-    display:flex;
+    display: flex;
 
     /* By default, flexed-elements are horizontal. "flex-direction column" makes them vertical*/
     flex-direction: column;
 
+    justify-content: center;
+
+    align-items: center;
+
     /* makes sections as wide as 90% of the "view width" */
     width: 90vw;
 
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
 }
 
-#allNewsItems{
+#about button {
+    width: 15vw;
+    height: 4vh;
+    background-color: #71DCBC;
+    font-size: large;
+
+    border: 4px solid #40b894;
+    border-left: #71DCBC 4px;
+    border-top: #71DCBC 4px;
+    border-radius: 5px;
+}
+
+#about button:active {
+    background-color: #40b894;
+    border-right: #71DCBC 4px solid;
+    border-bottom: #71DCBC 4px solid;
+}
+
+#allNewsItems {
     display: flex;
     /* Spaces the img and headline evenly from each other and the sides of the div */
     justify-content: space-around;
 }
-.newsItem{
+
+.newsItem {
     display: flex;
     justify-content: space-around;
 
     /* black border, 1px wide, 10px curved corners */
     border: 1px solid black;
     border-radius: 10px;
-    
+
     padding: 1vw;
     text-align: center;
 
     width: 25vw;
 }
-.newsItem img{
+
+.newsItem img {
     width: 12vw;
 }
 
-footer{
+footer {
     /* items are centered completely using flex */
     display: flex;
     flex-direction: column;
@@ -78,11 +177,101 @@ footer{
     justify-content: center;
 
     /* Footer section is 20% of the height of the view window */
-    height: 20vh;
+    height: 10vh;
     width: 100%;
 }
-footer p, footer h6{
+
+footer p, footer h6 {
     margin: 0;
     padding: 0;
-    
+    font-size: 15px;
+}
+
+
+/* ************** */
+/* AnimalSelector Specific Styles */
+
+#halfOfTypes a{
+    text-decoration: none;
+}
+#animalParagraph {
+    color: black;
+    margin: 0;
+    -webkit-text-stroke: #ffffff 0.2px;
+    font-size: 4vw;
+}
+
+#f {
+    font-size: 45px;
+}
+
+#animalType {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 90vw;
+    height: 50%;
+}
+
+#halfOfTypes {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+#halfOfTypes div {
+    border: solid black 1px;
+    width: 20vw;
+    height: 20vw;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+/* Mammal */
+#mammals {
+    background-image: url("images/animals/beaver.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Fish */
+#fish {
+    background-image: url("images/animals/fish.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Birds */
+#birds {
+    background-image: url("images/animals/bird.jpg");
+    background-position: center;
+    background-size: 50%;
+}
+
+/* Amphibians */
+#amphibians {
+    background-image: url("images/animals/frog.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Reptiles */
+#reptiles {
+    background-image: url("images/animals/reptile.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Insect */
+#insects {
+    background-image: url("images/animals/insect.jpg");
+    background-position: center;
+    background-size: 50%;
 }
