@@ -18,6 +18,8 @@ html {
 
     /* Light tan color */
     background-color: #fdfbe0;
+
+    scroll-behavior: smooth;
 }
 
 body {
@@ -42,7 +44,7 @@ p {
 /* this is a div with the ID "header" */
 #header {
     /* This div is 30% of the height of the screen it is viewed on. */
-    
+
     height: 20vh;
     width: 100vw;
 
@@ -63,6 +65,7 @@ p {
     justify-content: align-items;
     height: 100%;
 }
+
 #header img {
     height: 100%
 }
@@ -71,8 +74,8 @@ p {
     display: flex;
     justify-content: center;
 
-    position:sticky;
-    top:0;
+    position: sticky;
+    top: 0;
 
     width: 100vw;
     height: 3vw;
@@ -84,15 +87,17 @@ p {
     border-top: 0px;
     background-color: whitesmoke;
 }
+
 #nav a {
     margin: 0 2vw 0 2vw;
-    
+
     width: 8vw;
     height: 3vw;
 
     justify-content: center;
 }
-#nav button{
+
+#nav button {
     height: 100%;
     width: 100%;
 
@@ -103,7 +108,8 @@ p {
     border: 4px solid #b8406b;
     border-radius: 5px;
 }
-#nav button:active{
+
+#nav button:active {
     background-color: #b8406b;
     border-right: #DC7190 4px solid;
     border-bottom: #DC7190 4px solid;
@@ -127,7 +133,26 @@ section {
     margin-bottom: 10vh;
 }
 
-#about button {
+#about {
+    margin-top: 4vw;
+
+    width: 100vw;
+
+    background-color: #d0ceb5;
+}
+
+#conservation {
+    color: white;
+    padding: 10vw 0 10vw 0;
+
+    background-image: url(images/zookeeper_hippo.jpg);
+    background-size: cover;
+    background-position: center;
+
+    transition: all 2s ease;
+}
+
+#conservation button {
     width: 15vw;
     height: 4vh;
     background-color: #71DCBC;
@@ -139,36 +164,68 @@ section {
     border-radius: 5px;
 }
 
-#about button:active {
+#conservation button:active {
     background-color: #40b894;
     border-right: #71DCBC 4px solid;
     border-bottom: #71DCBC 4px solid;
 }
 
-#allNewsItems {
-    display: flex;
+#news {
+    background-color: #d0ceb5;
+    width: 100vw;
+}
 
-    flex-wrap: wrap;
-    /* Spaces the img and headline evenly from each other and the sides of the div */
-    justify-content: space-around;
+#allNewsItems {
+
+    display: flex;
+}
+
+#allNewsItems a {
+    text-decoration: none;
 }
 
 .newsItem {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 
+
+    font-family: 'Sofia Sans Condensed', sans-serif;
     /* black border, 1px wide, 10px curved corners */
     border: 1px solid black;
     border-radius: 10px;
 
     padding: 1vw;
     text-align: center;
+    font-size: 4vw;
+    -webkit-text-stroke: #ffffff 0.01px;
+    color: black;
+
 
     width: 25vw;
+    height: 20vw;
+    margin: 10px;
 }
 
-.newsItem img {
-    width: 12vw;
+#newsItem1 {
+    background-image: url(images/BrushWind_Rhino_dark.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#newsItem2 {
+    background-image: url(images/BrushWind_Ride_dark.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#newsItem3 {
+    background-image: url(images/DontFeed_dark.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 footer {
@@ -193,9 +250,10 @@ footer p, footer h6 {
 /* ************** */
 /* AnimalSelector Specific Styles */
 
-#halfOfTypes a{
+#halfOfTypes a {
     text-decoration: none;
 }
+
 #animalParagraph {
     color: black;
     margin: 0;
@@ -277,14 +335,64 @@ footer p, footer h6 {
     background-size: 50%;
 }
 
+/* ********** */
+/* News Page */
+#rhinoNews, #ride, #dontFeed {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 8vw 0 8vw 0;
+}
+
+#rhinoNews, #dontFeed {
+    width: 100vw;
+    background-color: #d0ceb5;
+}
+
+#rhinoNews p, #dontFeed p {
+    width: 80%
+}
+
+
 /* ************ */
 /* Donate Page */
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     border: solid black 1px;
     padding: 3vw;
+}
+
+#donateImgs {
+    margin: 5vw 0 5vw 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#donateImgs img {
+    width: 40vw;
+}
+
+#donatep {
+    background-color: #d0ceb5;
+    width: 101vw;
+}
+
+/* *********** */
+/* ticket page */
+
+
+#ticketp {
+    background-color: #d0ceb5;
+    width: 101vw;
 }
