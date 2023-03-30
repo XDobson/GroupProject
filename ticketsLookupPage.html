@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
     <!-- tab icon -->
     <link rel="shortcut icon" href="images/Brushwood_justB.png" type="image/png">
-    <link href="style.css" rel="stylesheet">
-    <title>BrushWind Zoo</title>
+    <title>Brushwind Tickets</title>
 </head>
 
-<body>
+<body class="ticketsPage">
     <div id="header">
 
         <!-- Logo -->
@@ -21,7 +21,6 @@
 
         <!-- Nav Bar -->
     </div>
-
     <div id="nav">
         <a href="index.html"> <button>Home</button></a>
         <a href="animalSelector.html"><button>Animals</button></a>
@@ -29,23 +28,35 @@
         <a href=" News.html"> <button>News</button></a>
         <a href="Donate.html"><button>Donate</button></a>
     </div>
-    <div id="donateImgs">
-        <img id="zookeeper" src="images/ZooKepper.jpg" width="500">
-        <img id="zookeeper" src="images/ZooKeeper2.jpg" width="500">
-    </div>
-    <h1>
-        Donate
-    </h1>
-    <p id="donatep">Thank you for visiting out donate page. If you can please give as much as you are able<br>
-        We are so grateful for our donors and all the incredible work they allow us to do. </p>
-    <form style="margin-bottom:10vh;">
-        <div><span>$</span><input type="number" min="5.00" step="0.01" max="5000" value="5.00"><br><br></div>
-        <input type="email" value="Enter your email"> <br>
-        <label for="ccn">Credit Card Number:</label>
-        <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19"
-            placeholder="xxxx xxxx xxxx xxxx">
-        <button>Submit</button>
+    <img style="width: 20vw;" id="ticket" src="images/ticket-logo.png">
+
+    <form>
+        <!-- Enter the ticket ID -->
+        <label for="ticketID">Ticket ID:</label>
+        <input type="text" id="ticketIDLookup" name="ticketID" placeholder="abcabc">
+        <br>
+        <input type="submit" value="Submit">
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="ticketLookupOutput">
+        <div>
+            <h3>Ticket ID</h3>
+            <p id="ticketID"></p>
+            <h3>Visit Date</h3>
+            <p id="visitDate"></p>
+        </div>
+        <div>
+            <h3>Adult Tickets</h3>
+            <p id="adultTickets"></p>
+            <h3>Kid Tickets</h3>
+            <p id="kidTickets"></p>
+        </div>
+    </div>
+
+
 
     <footer>
         <h6>BrushWind Zoo</h6>
@@ -53,6 +64,9 @@
         <p>1776 Avenue of Champions, Bowling Green, KY 42102-6435</p>
         <p>BrushWindZoo@gmail.com</p>
     </footer>
+
+    <!-- link app.js -->
+    <script src="app.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
     <title>Brushwind Tickets</title>
 </head>
 
-<body>
+<body class="ticketsPage">
     <div id="header">
 
         <!-- Logo -->
@@ -28,25 +28,45 @@
         <a href=" News.html"> <button>News</button></a>
         <a href="Donate.html"><button>Donate</button></a>
     </div>
-    <img style="width: 35vw;" id="ticket" src="images/ticket-logo.png">
+    <img style="width: 20vw;" id="ticket" src="images/ticket-logo.png">
     <h1>Purchase Tickets</h1>
+    <a href="ticketsLookupPage.html"><button id = "ticketLookup">Click here to lookup an already bought ticket</button></a>
     <p id="ticketp">Here you can purchase tickets and choose what date you are visiting. <br> The price for adults is
         $19.99 and for children the price is $10 <br> If you purchase 3 adult tickets you get $10 off.</p>
-    <form>
-        <label for="visitDate">Choose what date you want to visit</label>
-        <input type="date" id="visitDate" name="visitDate">
-        <br>
-        <label for="ticketNum">How many Adults?</label>
-        <input type="number" id="ticketNumAdult" name="ticketNum" min="1" max="99" step="1" value="1">
 
-        <label for="ticketNum">How many Kids?</label>
-        <input type="number" id="ticketNumKid" name="ticketNum" min="0" max="99" step="1" value="0">
-        <br>
-        <p style="margin:0;">Cost of tickets:</p>
-        <p id="costp" style="margin:0;">$0</p>
-        <br>
-        <button> Submit</button>
-    </form>
+    <div id="inputAndOutput">
+        <form action="">
+            <label for="visitDate">Choose what date you want to visit</label>
+            <input type="date" id="visitDate" name="visitDate">
+            <br>
+            <label for="ticketNum">How many Adults?</label>
+            <input type="number" id="ticketNumAdult" name="ticketNum" min="1" max="99" step="1" value="1">
+
+            <label for="ticketNum">How many Kids?</label>
+            <input type="number" id="ticketNumKid" name="ticketNum" min="0" max="99" step="1" value="0">
+            <br>
+            <label for="ticketNum">CC Number</label>
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number"
+                maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+            <br>
+            <p style="margin:0;">Cost of tickets:</p>
+            <p id="costp" style="margin:0;">$0</p>
+            <br>
+            <button type="button" onclick="buyTicket()"> Submit</button>
+        </form>
+
+        <div id="ticketOutput">
+            <div>
+                <h3 style="margin: 0;">Ticket ID</h3>
+                <p style="margin: 0;" id="ticketID">aaaaaaa</p>
+            </div>
+
+            <p id="adultOut" style="margin: 0;">Adults: 0</p>
+            <p id="kidOut" style="margin: 0;">Kids: 0</p>
+            <p id="dateOut" style="margin: 0;">For [date]</p>
+
+        </div>
+    </div>
 
 
     <footer>
