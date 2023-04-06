@@ -14,9 +14,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// this is one line of code that takes the information from the form and writes it to the database. You would change the action attribute of the form to "ticketRegister.php" and it would take the values from the elements with the ids "id" "adults" and "kids" and write them to the database in the table "tickets"
-$sql = "INSERT INTO tickets (id, adults, kids)
-VALUES ('$_POST[id]', '$_POST[adults]', '$_POST[kids]')";
+// this takes the information from the form and writes it to the database. You would change the action attribute of the form to "ticketRegister.php" and it would take the values from the elements with the ids "id" "adults" and "kids" and write them to the database in the table "tickets"
+$sql = "INSERT INTO tickets (id, adults, kids)VALUES ('$_POST[id]', '$_POST[adults]', '$_POST[kids]')";
 
 
 ?>
