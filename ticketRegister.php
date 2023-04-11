@@ -2,9 +2,9 @@
 <!-- this is a SAMPLE file to kinda show how it works -->
 <?php
 // put real credientials here
-$servername = "localhost";
-$username = "username";
-$password = "password";
+$servername = "Local";
+$username = "adminUser";
+$password = "password1";
 $dbname = "tickets";
 
 // Create connection

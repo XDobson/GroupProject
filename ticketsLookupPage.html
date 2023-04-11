@@ -11,7 +11,7 @@
     <title>Brushwind Tickets</title>
 </head>
 
-<body class="ticketsPage">
+<body>
     <div id="header">
 
         <!-- Logo -->
@@ -30,7 +30,8 @@
     </div>
     <img style="width: 20vw;" id="ticket" src="images/ticket-logo.png">
         <p> Enter your Ticket ID below to find information about your visit!</p>
-    <form>
+    <!-- when form is submit, call javascript function sendForm() -->
+    <form onsubmit="sendForm(); return false;">
         <!-- Enter the ticket ID -->
         <label for="ticketID">Ticket ID:</label>
         <input type="text" id="ticketIDLookup" name="ticketID" placeholder="7-letter ID">
