@@ -39,9 +39,9 @@
     <p id="donatep">Thank you for visiting out donate page. If you can please give as much as you are able<br>
         We are so grateful for our donors and all the incredible work they allow us to do. Thanks to you we were able to purchase Ryan the Rhino and give him a new home! <br>
     With your continued support we will be able to purchase many more animals. </p>
-    <form style="margin-bottom:10vh;">
+    <form method="post" action="tester.php" style="margin-bottom:10vh;">
         <div><span>$</span><input type="number" min="5.00" step="0.01" max="5000" value="5.00"><br><br></div>
-        <input type="email" value="Enter your email"> <br>
+        <input type="email" placeholder="Enter your email"> <br>
         <label for="ccn">Credit Card Number:</label>
         <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19"
             placeholder="xxxx xxxx xxxx xxxx">

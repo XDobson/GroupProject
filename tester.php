@@ -1,5 +1,3 @@
-<!-- when called by a java function, accept a FormData and returns it back -->
 <?php
-    $data = $_POST['data'];
-    echo $data;
-?>
+    // echo all the info posted to this script
+    print_r($_POST);

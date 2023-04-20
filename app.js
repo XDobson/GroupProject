@@ -53,7 +53,6 @@ function buyTicket() {
             kidNum: document.getElementById("ticketNumKid").value,
             date: document.getElementById("visitDate").value
         }
-        console.log(ticket);
 
         //show ticket in html
         document.getElementById("kidOut").innerHTML = "Kids: " + ticket.kidNum;
@@ -90,11 +89,11 @@ if (document.getElementsByTagName("body")[0].className == "ticketsPage") {
 
 
 // a function that gets data from a form with the id "form" and sends it to a php file named "tester.php" and logs the response
-function sendForm() {
+async function sendForm() {
     let form = document.getElementsByTagName("form")[0];
     let formData = new FormData(form);
     let xhr = new XMLHttpRequest();
-    xhr.open("PUT", "tester.php");
+    xhr.open("POST", "tester.php");
     xhr.send(formData);
     xhr.onload = function () {
         console.log(xhr.response);

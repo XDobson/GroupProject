@@ -40,24 +40,24 @@
     Make sure to visit the news page <a href="News.html">here </a> we may announce new deals and discounts on tickets.</p>
 
     <div id="inputAndOutput">
-        <form action="">
+        <form action="tester.php" method="post">
             <label for="visitDate">Choose what date you want to visit</label>
             <input type="date" id="visitDate" name="visitDate">
             <br>
-            <label for="ticketNum">How many Adults?</label>
-            <input type="number" id="ticketNumAdult" name="ticketNum" min="1" max="99" step="1" value="1">
+            <label for="ticketNumAdult">How many Adults?</label>
+            <input type="number" id="ticketNumAdult" name="ticketNumAdult" min="1" max="99" step="1" value="1">
 
-            <label for="ticketNum">How many Kids?</label>
-            <input type="number" id="ticketNumKid" name="ticketNum" min="0" max="99" step="1" value="0">
+            <label for="ticketNumKid">How many Kids?</label>
+            <input type="number" id="ticketNumKid" name="ticketNumKid" min="0" max="99" step="1" value="0">
             <br>
-            <label for="ticketNum">CC Number</label>
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number"
+            <label for="ccn">CC Number</label>
+            <input id="ccn" name="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number"
                 maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
             <br>
             <p style="margin:0;">Cost of tickets:</p>
             <p id="costp" style="margin:0;">$0</p>
             <br>
-            <button type="button" onclick="buyTicket()"> Submit</button>
+            <button onclick="buyTicket()"> Submit</button>
         </form>
 
         <div id="ticketOutput">
