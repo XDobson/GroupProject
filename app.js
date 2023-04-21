@@ -31,7 +31,7 @@ function createID() {
     return id;
 }
 
-//buy a ticket and send to database
+
 function buyTicket() {
     //pull today from a date func
     let today = new Date();
@@ -40,10 +40,23 @@ function buyTicket() {
     let yyyy = today.getFullYear();
     today = yyyy + '-' + mm + '-' + dd;
 
+    //if statement that takes the elemenet with the id of "phone" and makes sure its a phone number
+    
+
+    if (document.getElementById("phone").value.length != 10) {
+        alert("Please enter a valid phone number");
+    }
+
+
     if (
         document.getElementById("ticketNumAdult").value != 0 &&
         document.getElementById("ticketNumAdult").value <= 99 &&
         document.getElementById("ticketNumKid").value <= 99 &&
+        document.getElementById("name").value != '' &&
+        document.getElementById("lname").value != '' &&
+        document.getElementById("email").value != '' &&
+        document.getElementById("phone").value.length == 10 &&
+        document.getElementById("ccn").value != '' &&
         document.getElementById("visitDate").value != '' &&
         Date.parse(document.getElementById("visitDate").value) >= Date.parse(today)
     ) {
@@ -60,7 +73,30 @@ function buyTicket() {
         document.getElementById("adultOut").innerHTML = "Adults: " + ticket.adultNum;
         document.getElementById("ticketID").innerHTML = ticket.id;
         document.getElementById("ticketOutput").style.display = "flex";
+        
+        console.log("sending primary form");
+        let form1 = document.getElementById("form");
+        let formData1 = new FormData(form1);
+        let xhr1 = new XMLHttpRequest();
+        xhr1.open("POST", "tester2.php", true);
+        xhr1.onreadystatechange = function () {
+        if (xhr1.readyState === 4 && xhr1.status === 200) {
+            console.log(xhr1.responseText);
+        }
+        };
+        xhr1.send(formData1);
 
+        console.log("sending secondary form");
+        let form = document.getElementById("form");
+        let formData = new FormData(form);
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "tester.php", true);
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+        };
+        xhr.send(formData);
 
         //buying ticket errors
     } else if (document.getElementById("ticketNumAdult").value == 0) {
@@ -73,7 +109,10 @@ function buyTicket() {
         alert("Please enter less than 100 adults.");
     } else if (document.getElementById("ticketNumKid").value > 99) {
         alert("Please enter less than 100 kids.");
+    } else {
+        alert("Please fill out all fields.");
     }
+
 }
 
 // ***********************************************
@@ -88,14 +127,17 @@ if (document.getElementsByTagName("body")[0].className == "ticketsPage") {
 // ***********************************************
 
 
-// a function that gets data from a form with the id "form" and sends it to a php file named "tester.php" and logs the response
+// a function that gets called when a form submit button is pushed that sends the form data to "tester.php" and logs the echo, use ajax to send the data
 async function sendForm() {
-    let form = document.getElementsByTagName("form")[0];
+    console.log("sending form");
+    let form = document.getElementById("form");
     let formData = new FormData(form);
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "tester.php");
+    xhr.open("POST", "tester.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    };
     xhr.send(formData);
-    xhr.onload = function () {
-        console.log(xhr.response);
-    }
 }

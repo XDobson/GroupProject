@@ -122,6 +122,26 @@ p {
     border-bottom: #DC7190 4px solid;
 }
 
+#splashhead{
+    background-color: #c8e6c9; 
+    padding: 20px; 
+    text-align: center; 
+    border-bottom: 5px solid #DC7190;        
+}
+
+#aniborder {
+        border: 5px dotted;
+        border-image: linear-gradient(to right,  #DC7190 50%, #71DCBC 50%);
+        border-image-slice: 1;
+  }
+  .anibordertwo {
+    border: 5px dotted;
+    border-image: linear-gradient(to top,  #DC7190 50%, #71DCBC 50%);
+    border-image-slice: 1;
+}
+  
+  
+
 /* Applies to all sections. Sections is the tag we will be using for each thing we put in the body, like "about section" "news section" etc. */
 section {
     /* Flex direction type makes the elements easier to control. */
@@ -573,4 +593,5 @@ form input{
         #conservation button{
             width: 23vw;
         }
+
     }
